@@ -1,0 +1,8 @@
+{
+  "appId": "com.zwsoft.iotswitch",
+  "appName": "智能家居",
+  "webDir": "dist/build/h5",
+  "android": {
+    "allowMixedContent": true
+  }
+}

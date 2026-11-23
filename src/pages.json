@@ -1,0 +1,28 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "智能家居"
+			}
+		},
+		{
+			"path": "pages/switch/switch",
+			"style": {
+				"navigationBarTitleText": "物联网开关"
+			}
+		},
+		{
+			"path": "pages/settings/settings",
+			"style": {
+				"navigationBarTitleText": "物联网设置"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "智能家居",
+		"navigationBarBackgroundColor": "#0f1420",
+		"backgroundColor": "#0f1420"
+	}
+}
