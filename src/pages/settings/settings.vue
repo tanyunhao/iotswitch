@@ -37,10 +37,7 @@
 
       <view v-for="sw in settings.switches" :key="sw.id" class="sw-item">
         <view class="sw-icon">
-          <view class="mini-power">
-            <view class="mini-line"></view>
-            <view class="mini-ring"></view>
-          </view>
+          <image class="sw-svg" src="/static/switch.svg" mode="aspectFit" />
         </view>
         <view class="sw-info">
           <text class="sw-name">{{ sw.name }}</text>
@@ -245,29 +242,9 @@ function save() {
   justify-content: center;
   flex-shrink: 0;
 }
-.mini-power {
-  position: relative;
-  width: 36rpx;
-  height: 36rpx;
-}
-.mini-ring {
-  position: absolute;
-  inset: 0;
-  border: 4rpx solid #34d399;
-  border-top-color: transparent;
-  border-radius: 50%;
-  transform: rotate(-90deg);
-}
-.mini-line {
-  position: absolute;
-  left: 50%;
-  top: -3rpx;
-  width: 4rpx;
-  height: 18rpx;
-  margin-left: -2rpx;
-  background: #34d399;
-  border-radius: 4rpx;
-  z-index: 1;
+.sw-svg {
+  width: 52rpx;
+  height: 26rpx;
 }
 .sw-info {
   flex: 1;

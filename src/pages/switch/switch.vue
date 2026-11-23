@@ -8,8 +8,8 @@
       </view>
       <text class="broker">{{ brokerUrl }}</text>
       <view class="settings-btn" hover-class="btn-hover" @click="goSettings">
+        <image class="settings-svg" src="/static/settings.svg" mode="aspectFit" />
         <text>设置</text>
-        <view class="chevron"></view>
       </view>
     </view>
 
@@ -33,10 +33,10 @@
           hover-class="power-hover"
           @click="toggle(sw)"
         >
-          <view class="power-icon">
-            <view class="power-line"></view>
-            <view class="power-ring"></view>
-          </view>
+          <svg class="power-svg" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <path d="M512 610.271019c-26.46127 0-47.937083-21.475813-47.937083-47.937083l0-511.328881c0-26.46127 21.475813-47.937083 47.937083-47.937083s47.937083 21.475813 47.937083 47.937083l0 511.328881C559.937083 588.795206 538.46127 610.271019 512 610.271019z" />
+            <path d="M512 1023.616503c-245.373947 0-444.983959-199.673928-444.983959-445.047875 0-156.019225 79.511641-297.912989 212.648898-379.533862 22.498471-13.869796 52.027714-6.775108 65.89751 15.787279 13.869796 22.562387 6.775108 52.09163-15.787279 65.89751-104.50284 64.107858-166.884963 175.449722-166.884963 297.849073 0 192.515324 156.59447 349.17371 349.109793 349.17371 192.57924 0 349.17371-156.658386 349.17371-349.17371 0-123.166344-62.957368-234.827789-168.355034-298.743899-22.626303-13.678048-29.848823-43.20729-16.10686-65.833593 13.678048-22.690219 43.20729-29.848823 65.833593-16.10686 134.351663 81.429124 214.502466 223.770301 214.502466 380.748268C957.047875 824.006491 757.373947 1023.616503 512 1023.616503z" />
+          </svg>
         </view>
       </view>
 
@@ -299,12 +299,9 @@ onUnmounted(() => {
   flex-shrink: 0;
   padding: 8rpx 4rpx;
 }
-.chevron {
-  width: 12rpx;
-  height: 12rpx;
-  border-top: 3rpx solid #93c5fd;
-  border-right: 3rpx solid #93c5fd;
-  transform: rotate(45deg);
+.settings-svg {
+  width: 32rpx;
+  height: 32rpx;
 }
 .btn-hover { opacity: 0.6; }
 
@@ -407,34 +404,17 @@ onUnmounted(() => {
   box-shadow: 0 0 60rpx rgba(52, 211, 153, 0.45), 0 10rpx 30rpx rgba(16, 185, 129, 0.3);
 }
 .power-btn.disabled { opacity: 0.45; }
-.power-icon {
-  position: relative;
-  width: 84rpx;
-  height: 84rpx;
+.power-svg {
+  width: 88rpx;
+  height: 88rpx;
 }
-.power-ring {
-  position: absolute;
-  inset: 0;
-  border: 9rpx solid #55617a;
-  border-top-color: transparent;
-  border-radius: 50%;
-  transform: rotate(-90deg);
-  transition: border-color 0.35s;
+.power-svg path {
+  fill: #55617a;
+  transition: fill 0.35s;
 }
-.power-line {
-  position: absolute;
-  left: 50%;
-  top: -7rpx;
-  width: 9rpx;
-  height: 42rpx;
-  margin-left: -4.5rpx;
-  background: #55617a;
-  border-radius: 6rpx;
-  z-index: 1;
-  transition: background 0.35s;
+.power-btn.on .power-svg path {
+  fill: #fff;
 }
-.power-btn.on .power-ring { border-color: #fff; border-top-color: transparent; }
-.power-btn.on .power-line { background: #fff; }
 
 .switch-state {
   font-size: 28rpx;

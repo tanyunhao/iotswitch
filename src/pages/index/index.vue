@@ -12,10 +12,7 @@
 
     <view class="entry-card" hover-class="entry-hover" @click="goSwitch">
       <view class="entry-icon">
-        <view class="mini-power">
-          <view class="mini-line"></view>
-          <view class="mini-ring"></view>
-        </view>
+        <image class="entry-svg" src="/static/switch.svg" mode="aspectFit" />
       </view>
       <view class="entry-text">
         <text class="entry-title">开关控制</text>
@@ -137,29 +134,9 @@ export default {
   justify-content: center;
   flex-shrink: 0;
 }
-.mini-power {
-  position: relative;
-  width: 44rpx;
-  height: 44rpx;
-}
-.mini-ring {
-  position: absolute;
-  inset: 0;
-  border: 5rpx solid #34d399;
-  border-top-color: transparent;
-  border-radius: 50%;
-  transform: rotate(-90deg);
-}
-.mini-line {
-  position: absolute;
-  left: 50%;
-  top: -4rpx;
-  width: 5rpx;
-  height: 22rpx;
-  margin-left: -2.5rpx;
-  background: #34d399;
-  border-radius: 4rpx;
-  z-index: 1;
+.entry-svg {
+  width: 64rpx;
+  height: 32rpx;
 }
 .entry-text {
   flex: 1;
